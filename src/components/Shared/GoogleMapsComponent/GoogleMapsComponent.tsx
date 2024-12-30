@@ -1,31 +1,44 @@
-import React from 'react'
-
-import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+import React, { useState } from "react";
+import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 
 const containerStyle = {
-  width: '100%',
-  height: '400px'
+  width: "100%",
+  height: "400px",
 };
 
-const center = {
+const defaultCenter = {
   lat: -3.745,
-  lng: -38.523
+  lng: -38.523,
 };
 
-function GoogleMapsComponent() {
+interface GoogleMapsComponentProps {
+  onLocationChange: (lat: number, lng: number) => void;
+}
+
+function GoogleMapsComponent({ onLocationChange }: GoogleMapsComponentProps) {
+  const [markerPosition, setMarkerPosition] = useState<{ lat: number; lng: number }>(defaultCenter);
+
+  const handleMapClick = (event: google.maps.MapMouseEvent) => {
+    if (event.latLng) {
+      const lat = event.latLng.lat();
+      const lng = event.latLng.lng();
+      setMarkerPosition({ lat, lng });
+      onLocationChange(lat, lng);  // Pass the latitude and longitude back to the parent component
+    }
+  };
+
   return (
-    <LoadScript
-      googleMapsApiKey="AIzaSyBdEBWtBG4z3kViLbM231R5UT1U57Cv4AM"
-    >
+    <LoadScript googleMapsApiKey="YOUR_GOOGLE_MAPS_API_KEY_HERE">
       <GoogleMap
         mapContainerStyle={containerStyle}
-        center={center}
+        center={markerPosition}
         zoom={10}
+        onClick={handleMapClick}
       >
-        <Marker position={center} />
+        <Marker position={markerPosition} />
       </GoogleMap>
     </LoadScript>
-  )
+  );
 }
 
 export default GoogleMapsComponent;

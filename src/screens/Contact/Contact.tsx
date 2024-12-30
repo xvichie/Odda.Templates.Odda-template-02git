@@ -167,7 +167,7 @@ function Contact() {
           </div>
         </Container>
       </div>
-      <GoogleMapsComponent />
+      {/* <GoogleMapsComponent /> */}
     </>
   );
 }

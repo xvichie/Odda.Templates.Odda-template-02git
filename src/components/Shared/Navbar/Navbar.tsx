@@ -15,7 +15,7 @@ function Navbar() {
           <div>
             <span className="text-white flex items-center">
               <FaLocationPin className="mr-2" />
-              <h4 className="text-xs">ქობულეთი, ძმები ბოზების #4</h4>
+              <h4 className="text-xs">ქობულეთი, ძმები კაკაბაძეების #4</h4>
             </span>
           </div>
         </Container>
@@ -26,7 +26,7 @@ function Navbar() {
             <Nav.Brand href="/">
               <FaHotel className="mr-3 h-12 w-12" />
               <span className="self-center whitespace-nowrap text-sm md:text-md font-semibold text-black">
-                გიას სასტუმრო
+                Tally Paradise
               </span>
             </Nav.Brand>
             <Nav.Toggle className="bg-white" />
@@ -68,21 +68,21 @@ function Navbar() {
               <div className="flex items-center justify-center text-white 
               border-r-[1px] border-solid border-gray-400">
                 <MdBedroomParent className="mr-1 group-hover:opacity-75" />
-                <h4 className="group-hover:opacity-75">ოთახები</h4>
+                <h4 className="group-hover:opacity-75">აქტივობები</h4>
               </div>
             </div>
             <div className="group hover:cursor-pointer h-full w-full py-4 hidden lg:block">
               <div className="flex items-center justify-center text-white 
               border-r-[1px] border-solid border-gray-400">
                 <MdBedroomParent className="mr-1 group-hover:opacity-75" />
-                <h4 className="group-hover:opacity-75">ოთახები</h4>
+                <h4 className="group-hover:opacity-75">სპა & აუზი</h4>
               </div>
             </div>
             <div className="group hover:cursor-pointer h-full w-full py-4 hidden lg:block">
               <div className="flex items-center justify-center text-white 
               border-r-[1px] border-solid border-gray-400">
                 <MdBedroomParent className="mr-1 group-hover:opacity-75" />
-                <h4 className="group-hover:opacity-75">ოთახები</h4>
+                <h4 className="group-hover:opacity-75">გოლფი</h4>
               </div>
             </div>
           </div>
